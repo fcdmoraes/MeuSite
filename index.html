@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FCDMoraes - Portifólio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  * {box-sizing: border-box}
+
+  /* Set height of body and the document to 100% */
+  body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial;
+  }
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+  .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+
+  .tablink:hover {
+    background-color: #777;
+  }
+
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+
+  </style>
+</head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div class="container-fluid" style="background-color:#F44336;color:#fff;height:150px;">
+      <h1>Flávio Campopiano Dias de Moraes</h1>
+      <h3>Portifólio</h3>
+    </div>
+
+    <span  data-spy="affix" data-offset-top="197">
+      <button class="tablink" onclick="openPage('Home', this, '#444')" id="defaultOpen">Home</button>
+      <button class="tablink" onclick="openPage('Projetos', this, '#444')" >Projetos</button>
+      <button class="tablink" onclick="openPage('Aulas', this, '#444')">Aulas</button>
+      <button class="tablink" onclick="openPage('Sobre Mim', this, '#444')">Sobre Mim</button>
+    </span>
+
+    <div id="Home" class="tabcontent">
+      <h3>Home</h3>
+    </div>
+
+    <div id="Projetos" class="tabcontent">
+      <h3>Projetos</h3>
+      <p>Lista de projetos e links para o GitHub</p>
+    </div>
+
+    <div id="Aulas" class="tabcontent">
+      <h3>Aulas</h3>
+      <p>Link das video aulas no youtube</p>
+    </div>
+
+    <div id="Sobre Mim" class="tabcontent">
+      <h3>Sobre Mim</h3>
+      <p>Minha história, meu CV, minhas publicações</p>
+    </div>
+    
+    <script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
